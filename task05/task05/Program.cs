@@ -12,11 +12,10 @@ namespace task05
         {
             Console.WriteLine("Задание 5.1");
             Console.WriteLine("");
-            Console.WriteLine("Введите, пожалуйста, строку");
-            Translit translit = new Translit();
-            string firstString = Console.ReadLine();
-            string translitedString = translit.TranslitedString(firstString);
-            Console.WriteLine($"Переведённая строка - {translitedString}");
+            Console.WriteLine("Введите, пожалуйста, текст");
+            var text = Console.ReadLine();
+            Console.WriteLine("Транслитерация:");
+            Console.WriteLine(Transliterate(text));
 
             Console.WriteLine("");
             Console.WriteLine("Задание 5.2");
@@ -37,91 +36,45 @@ namespace task05
 
             Console.ReadKey();
         }
-        public class Translit
+
+        static string Transliterate(string text) 
         {
-            Dictionary<string, string> dictionaryChar = new Dictionary<string, string>()
-            {
-                {"A", "А"},
-                {"а", "a"},
-                {"Б", "B"},
-                {"б", "b"},
-                {"В", "V"},
-                {"в", "v"},
-                {"Г", "G"},
-                {"г", "g"},
-                {"Д", "D"},
-                {"д", "d"},
-                {"Е", "E"},
-                {"е", "e"},
-                {"Ё", "E"},
-                {"ё", "e"},
-                {"Ж", "ZH"},
-                {"ж", "zh"},
-                {"З", "Z"},
-                {"з", "z"},
-                {"И", "I"},
-                {"и", "i"},
-                {"Й", "I"},
-                {"й", "i"},
-                {"К", "K"},
-                {"к", "k"},
-                {"Л", "L"},
-                {"л", "l"},
-                {"М", "M"},
-                {"м", "m"},
-                {"Н", "N"},
-                {"н", "n"},
-                {"О", "O"},
-                {"о", "o"},
-                {"П", "P"},
-                {"п", "p"},
-                {"Р", "R"},
-                {"р", "r"},
-                {"С", "S"},
-                {"с", "s"},
-                {"Т", "T"},
-                {"т", "t"},
-                {"У", "U"},
-                {"у", "u"},
-                {"Ф", "F"},
-                {"ф", "f"},
-                {"Х", "KH"},
-                {"х", "kh"},
-                {"Ц", "TS"},
-                {"ц", "ts"},
-                {"Ч", "CH"},
-                {"ч", "ch"},
-                {"Ш", "SH"},
-                {"ш", "sh"},
-                {"Щ", "SHCH"},
-                {"щ", "shch"},
-                {"Ъ", "IE"},
-                {"ъ", "ie"},
-                {"Ы", "Y"},
-                {"ы", "y"},
-                {"Ь", null},
-                {"ь", null},
-                {"Э", "E"},
-                {"э", "e"},
-                {"Ю", "IU"},
-                {"ю", "iu"},
-                {"Я", "IA"},
-                {"я", "ia"}
-            };
-            public string TranslitedString(string source)
-            {
-                var result = "";
-                foreach (var ch in source)
-                {
-                    var ss = "";
-                    if (dictionaryChar.TryGetValue(ch.ToString(), out ss))
-                    {
-                        result += ss;
-                    }
-                    else result += ch;
-                }
-                return result;
-            }
+            var result = text.ToUpper();
+
+            result = result.Replace('А', 'A');
+            result = result.Replace('Б', 'B');
+            result = result.Replace('В', 'V');
+            result = result.Replace('Г', 'G');
+            result = result.Replace('Д', 'D');
+            result = result.Replace('Е', 'E');
+            result = result.Replace('Ё', 'E');
+            result = result.Replace("Ж", "ZH");
+            result = result.Replace('З', 'Z');
+            result = result.Replace('И', 'I');
+            result = result.Replace('Й', 'I');
+            result = result.Replace('К', 'K');
+            result = result.Replace('Л', 'L');
+            result = result.Replace('М', 'M');
+            result = result.Replace('Н', 'N');
+            result = result.Replace('О', 'O');
+            result = result.Replace('П', 'P');
+            result = result.Replace('Р', 'R');
+            result = result.Replace('С', 'S');
+            result = result.Replace('Т', 'T');
+            result = result.Replace('У', 'U');
+            result = result.Replace('Ф', 'F');
+            result = result.Replace("Х", "KH");
+            result = result.Replace("Ц", "TS");
+            result = result.Replace("Ч", "CH");
+            result = result.Replace("Ш", "SH");
+            result = result.Replace("Щ", "SHCH");
+            result = result.Replace("Ъ", "IE");
+            result = result.Replace('Ы', 'Y');
+            result = result.Replace("Ь", "");
+            result = result.Replace('Э', 'E');
+            result = result.Replace("Ю", "IU");
+            result = result.Replace("Я", "IA");
+            return result;
         }
-}
+    }
 }

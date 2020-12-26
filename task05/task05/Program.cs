@@ -20,19 +20,12 @@ namespace task05
             Console.WriteLine("");
             Console.WriteLine("Задание 5.2");
             Console.WriteLine("");
-            Console.WriteLine("Данное слово - «вертикаль»");
-
-            Console.Write("Первое слово - ");
-            Console.Write("вертикаль"[3]);
-            Console.Write("вертикаль"[4]);
-            Console.WriteLine("вертикаль"[2]);
-
-            Console.Write("Второе слово - ");
-            Console.Write("вертикаль"[0]);
-            Console.Write("вертикаль"[1]);
-            Console.Write("вертикаль"[3]);
-            Console.Write("вертикаль"[5]);
-            Console.Write("вертикаль"[6]);
+            var vertikal = "вертикаль";
+            var tir = vertikal.Substring(3, 2) + vertikal.Substring(2, 1);
+            var vetka = vertikal.Substring(0, 2) + vertikal.Substring(3, 1) + vertikal.Substring(5, 2);
+            Console.WriteLine("Данное слово - " + vertikal);
+            Console.WriteLine("Первое слово - " + tir);
+            Console.WriteLine("Второе слово - " + vetka);
 
             Console.ReadKey();
         }

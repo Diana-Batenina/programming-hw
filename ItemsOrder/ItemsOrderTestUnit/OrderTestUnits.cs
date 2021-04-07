@@ -12,7 +12,7 @@ namespace ItemsOrderTestUnit
         public void ConstructorTestMethod()
         {
             var ikeaTable = CreateTestOrder();
-            Assert.AreEqual("Складной стол IKEA", ikeaTable.NameOfItem);
+            Assert.AreEqual("РЎРєР»Р°РґРЅРѕР№ СЃС‚РѕР» IKEA", ikeaTable.NameOfItem);
             Assert.AreEqual("IKEA-TABLES-1598764", ikeaTable.VendorCode);
             Assert.AreEqual("Petrov", ikeaTable.CourierSurname);
             Assert.AreEqual((long)100203, ikeaTable.OrderNumber);
@@ -23,15 +23,15 @@ namespace ItemsOrderTestUnit
         public void ToStringTestMethod()
         {
             var ikeaTable = CreateTestOrder();
-            Assert.AreEqual("Складной стол IKEA IKEA-TABLES-1598764", ikeaTable.ToString());
+            Assert.AreEqual("РЎРєР»Р°РґРЅРѕР№ СЃС‚РѕР» IKEA IKEA-TABLES-1598764", ikeaTable.ToString());
         }
         [TestMethod]
         public void PrintInfoTestMethod()
         {
             
             var ikeaTable = CreateTestOrder();
-            var boshWash = new Order("Стиральная машина BOSCH", "BOSCH-WASHING_MACHINES-123456", "Ivanov", 1592874, "16.04.2021 14:17", TypesOfOrder.Urgent);
-            var consoleOut = new[] { "Складной стол IKEA IKEA-TABLES-1598764", $"Фамилия курьера: Petrov. Номер заказа: 100203. Дата и время доставки: 06.03.2021 15:43. Тип доставки: обычный.", "Стиральная машина BOSCH BOSCH-WASHING_MACHINES-123456", $"Фамилия курьера: Ivanov. Номер заказа: 1592874. Дата и время доставки: 16.04.2021 14:17. Тип доставки: срочный." };
+            var boshWash = new Order("РЎС‚РёСЂР°Р»СЊРЅР°СЏ РјР°С€РёРЅР° BOSCH", "BOSCH-WASHING_MACHINES-123456", "Ivanov", 1592874, "16.04.2021 14:17", TypesOfOrder.Urgent);
+            var consoleOut = new[] { "РЎРєР»Р°РґРЅРѕР№ СЃС‚РѕР» IKEA IKEA-TABLES-1598764", $"Р¤Р°РјРёР»РёСЏ РєСѓСЂСЊРµСЂР°: Petrov. РќРѕРјРµСЂ Р·Р°РєР°Р·Р°: 100203. Р”Р°С‚Р° Рё РІСЂРµРјСЏ РґРѕСЃС‚Р°РІРєРё: 06.03.2021 15:43. РўРёРї РґРѕСЃС‚Р°РІРєРё: РѕР±С‹С‡РЅС‹Р№.", "РЎС‚РёСЂР°Р»СЊРЅР°СЏ РјР°С€РёРЅР° BOSCH BOSCH-WASHING_MACHINES-123456", $"Р¤Р°РјРёР»РёСЏ РєСѓСЂСЊРµСЂР°: Ivanov. РќРѕРјРµСЂ Р·Р°РєР°Р·Р°: 1592874. Р”Р°С‚Р° Рё РІСЂРµРјСЏ РґРѕСЃС‚Р°РІРєРё: 16.04.2021 14:17. РўРёРї РґРѕСЃС‚Р°РІРєРё: СЃСЂРѕС‡РЅС‹Р№." };
 
             
             TextWriter oldOut = Console.Out; 
@@ -49,7 +49,7 @@ namespace ItemsOrderTestUnit
         }
         private Order CreateTestOrder()
         {
-            return new Order("Складной стол IKEA", "IKEA-TABLES-1598764", "Petrov", 100203, "06.03.2021 15:43", TypesOfOrder.Regular);
+            return new Order("РЎРєР»Р°РґРЅРѕР№ СЃС‚РѕР» IKEA", "IKEA-TABLES-1598764", "Petrov", 100203, "06.03.2021 15:43", TypesOfOrder.Regular);
         }
     }
 }
